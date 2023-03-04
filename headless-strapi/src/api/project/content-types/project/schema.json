@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "description": {
+      "type": "text"
+    },
+    "technos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::techno.techno"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Personnel",
+        "Professionnel",
+        "Scolaire"
+      ]
+    },
+    "git_link": {
+      "type": "string"
+    },
+    "web_link": {
+      "type": "string"
+    }
+  }
+}
