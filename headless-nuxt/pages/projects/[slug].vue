@@ -34,9 +34,9 @@
             </div>
 
 
-            {{ project.id }}
+            <!-- {{ project.id }}
             <a href="">Projet précédent</a>
-            <a href="">Projet suivant</a>
+            <a href="">Projet suivant</a> -->
 
 
 
@@ -50,9 +50,9 @@
             </nuxt-link>
         </div> -->
 
-        <div v-if="project.value.id">
+        <!-- <div v-if="project.value.id">
             {{ projectPrevious.name }}
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -66,7 +66,7 @@ const { findOne } = useStrapi()
 const route = useRoute()
 const project = ref()
 
-const projectPrevious = ref()
+// const projectPrevious = ref()
 
 const projects = ref()
 
@@ -75,9 +75,9 @@ onMounted(async () => {
     project.value = await findOne(`projects?filters[slug]=${route.params.slug}&populate=deep`)
     project.value = project.value.data[0]
 
-    const previousId = project.value.id - 1
-    projectPrevious.value = await findOne(`projects?filters[id]=${previousId}&populate=deep`)
-    projectPrevious.value = projectPrevious.value.data[0]
+    // const previousId = project.value.id - 1
+    // projectPrevious.value = await findOne(`projects?filters[id]=${previousId}&populate=deep`)
+    // projectPrevious.value = projectPrevious.value.data[0]
 
     projects.value = await find('projects', { populate: 'deep' })
     console.log(projects.value)
