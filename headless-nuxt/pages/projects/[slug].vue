@@ -34,25 +34,23 @@
             </div>
 
 
-            <!-- {{ project.id }}
-            <a href="">Projet précédent</a>
-            <a href="">Projet suivant</a> -->
 
-
-
-        </div>
-        <!-- <div v-if="projects">
+            <!-- <div v-if="projects">
             <nuxt-link to=""></nuxt-link>
             vgyvt
             <nuxt-link to="/" :key="project_list.id" v-for="project_list in projects.data">
                 dvsd
                 {{ project_list.name }}
             </nuxt-link>
-        </div> -->
+            </div> -->
 
-        <!-- <div v-if="project.value.id">
-            {{ projectPrevious.name }}
-        </div> -->
+            <!-- <div v-if="projectPrevious">
+                teeest
+                {{ projectPrevious.name }}
+            </div> -->
+
+        </div>
+
     </div>
 </template>
 
@@ -66,7 +64,7 @@ const { findOne } = useStrapi()
 const route = useRoute()
 const project = ref()
 
-// const projectPrevious = ref()
+const projectPrevious = ref()
 
 const projects = ref()
 
@@ -75,12 +73,20 @@ onMounted(async () => {
     project.value = await findOne(`projects?filters[slug]=${route.params.slug}&populate=deep`)
     project.value = project.value.data[0]
 
-    // const previousId = project.value.id - 1
-    // projectPrevious.value = await findOne(`projects?filters[id]=${previousId}&populate=deep`)
-    // projectPrevious.value = projectPrevious.value.data[0]
+    // if (project.value.id != 1) {
+    //     projectPrevious.value == undefined
+    //     while (projectPrevious.value == undefined) {
+    //         const previousId = project.value.id - 1
+    //         projectPrevious.value = await findOne(`projects?filters[id]=${previousId}&populate=deep`)
+    //         projectPrevious.value = projectPrevious.value.data[0]
+    //         console.log(projectPrevious.value)
+    //     }
+    // } else {
+    //     projectPrevious.value = false
+    // }
 
-    projects.value = await find('projects', { populate: 'deep' })
-    console.log(projects.value)
+    // projects.value = await find('projects', { populate: 'deep' })
+    // console.log(projects.value)
 })
 
 

@@ -9,11 +9,11 @@
       <div class="flex justify-between items-center">
         <div class="flex gap-4">
           <p>Filtrer par </p>
-          <button @click="chooseFilter = 'technos'">
+          <button @click="chooseFilter = 'technos'" :class="chooseFilter == 'technos' ? 'underline' : ''">
             Technologie
           </button>
           |
-          <button @click="chooseFilter = 'types'">
+          <button @click="chooseFilter = 'types'" :class="chooseFilter == 'types' ? 'underline' : ''">
             Type
           </button>
         </div>
@@ -63,6 +63,7 @@
           <img class="w-2/3 place-self-center" v-if="img_src != false" :src="img_src" alt="Projet" />
         </div>
       </div>
+
     </div>
 
   </div>
@@ -130,4 +131,3 @@ onMounted(async () => {
 
 </script>
 
-<style scoped></style>
