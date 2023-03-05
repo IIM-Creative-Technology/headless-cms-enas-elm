@@ -16,10 +16,9 @@
 
             <hr class="line w-5/6 m-auto">
 
-
-            <a class="underline" v-if="project.git_link" :href="project.git_link">Lien du github</a>
+            <a class="underline" v-if="project.web_link" :href="project.web_link">Lien du projet </a>
             <br>
-            <a class="underline" v-if="project.web_link" :href="project.web_link">Lien du site </a>
+            <a class="underline" v-if="project.git_link" :href="project.git_link">Lien du github</a>
 
 
             <div class="flex gap-2 ">

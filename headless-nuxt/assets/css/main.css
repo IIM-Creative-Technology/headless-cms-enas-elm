@@ -29,5 +29,5 @@
 }
 
 .btn-filter{
-  @apply py-2 px-8 rounded-full w-fit border-2 border-[currentColor];
+  @apply py-2 px-4 rounded-full w-fit border-2 border-[currentColor];
 }

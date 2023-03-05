@@ -20,14 +20,14 @@
 
 
         <div>
-          <div v-if="chooseFilter === 'technos'" class="flex gap-8">
+          <div v-if="chooseFilter === 'technos'" class="flex gap-2 flex-wrap">
             <button class="btn-filter" @click="filterProjectsTechnos('all')">Tout voir</button>
             <button class="btn-filter" :key="techno" v-for="techno in technos" @click="filterProjectsTechnos(techno)">
               {{ techno }}
             </button>
           </div>
 
-          <div v-if="chooseFilter === 'types'" class="flex gap-8">
+          <div v-if="chooseFilter === 'types'" class="flex gap-2 flex-wrap ">
             <button class="btn-filter" @click="filterProjectsTypes('all')">Tout voir</button>
             <button class="btn-filter" :key="type" v-for="type in types" @click="filterProjectsTypes(type)">{{ type
             }}</button>

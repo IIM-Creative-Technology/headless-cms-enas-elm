@@ -9,9 +9,10 @@
 
 <style scoped>
 .bg-index {
-    background: rgb(121, 9, 100);
+    background: rgba(5, 25, 55, 1);
+    /* background: rgb(121, 9, 100);
     background: linear-gradient(180deg,
             rgba(121, 9, 100, 1) 0%,
-            rgba(5, 25, 55, 1) 90%);
+            rgba(5, 25, 55, 1) 90%); */
 }
 </style>
